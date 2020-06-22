@@ -8,4 +8,7 @@ Steps ->
 4. Now Create the RFC Destionation in ABAP SM59 tcode.
 5. Ceck the file - "callmethod.abap" and use similar code and create a test ABAP program to send the data.
 6. Write a logic for SE11-table retrivation and convert it to CSV.
+   - Dynamic Field Catalog creation
+   - Conversion to internal table
+   - Convertion to CSV
 7. Then use the concept of "point 5" and create a program to post the data to an API. remember to create a background job while calling the program.

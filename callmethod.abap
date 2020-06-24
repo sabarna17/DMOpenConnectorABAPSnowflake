@@ -33,11 +33,11 @@
         io_http_client = lo_http_client.
 
 * Set Payload or body ( JSON or XML)
-    IF iv_table_read IS NOT INITIAL.
+    IF iv_str IS INITIAL.
       CONCATENATE '{"script":"SELECT * FROM ' iv_table_read  INTO lv_body SEPARATED BY SPACE.
       lv_body = lv_body && '" }'.
     ELSE.
-      CONCATENATE '{"script":"INSERT INTO EMPDETAILS VALUES ' iv_str  INTO lv_body SEPARATED BY SPACE.
+      CONCATENATE '{"script":"INSERT INTO ' iv_table_read ' VALUES ' iv_str INTO lv_body SEPARATED BY SPACE.
       lv_body = lv_body && '"}'.
     ENDIF.
 
@@ -163,6 +163,6 @@
 
     cl_demo_output=>display( lv_string ).
 
-    testopenconnector( iv_str = lv_string ).
+    testopenconnector( iv_str = lv_string iv_table_read = iv_table ).
 
   ENDMETHOD.
